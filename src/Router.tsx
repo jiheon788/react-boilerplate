@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import routerMeta from 'meta/routerMeta';
+import routerMeta from 'lib/routerMeta';
 import { assignRouteProps } from 'utils/assignRouteProps';
 
-const lazyImport = (containerName: string) => lazy(() => import(`containers/${containerName}`));
+const lazyImport = (containerName: string) => lazy(() => import(`pages/${containerName}`));
 
 const assignRouter = Object.keys(routerMeta).map((componentKey: string) => {
   const props: any = assignRouteProps(routerMeta[componentKey]);

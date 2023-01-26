@@ -3,8 +3,8 @@ export type RouterMetaType = {
 };
 
 const routerMeta: RouterMetaType = {
-  Home: '/',
-  Auth: '/auth',
+  HomePage: '/',
+  AuthPage: '/auth',
 };
 
 export default routerMeta;

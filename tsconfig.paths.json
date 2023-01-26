@@ -4,12 +4,13 @@
     "paths": {
       "components/*": ["components/*"],
       "containers/*": ["containers/*"],
-      "meta/*": ["meta/*"],
-      "state/*": ["state/*"],
-      "interface/*": ["interface/*"],
+      "pages/*": ["pages/*"],
+      "states/*": ["states/*"],
+      "types/*": ["types/*"],
       "utils/*": ["utils/*"],
       "styles/*": ["styles/*"],
-      "lib/*": ["lib/*"]
+      "lib/*": ["lib/*"],
+      "constants/*": ["constants/*"]
     }
   }
 }
