@@ -8,7 +8,8 @@
       "state/*": ["state/*"],
       "interface/*": ["interface/*"],
       "utils/*": ["utils/*"],
-      "styles/*": ["styles/*"]
+      "styles/*": ["styles/*"],
+      "lib/*": ["lib/*"]
     }
   }
 }
