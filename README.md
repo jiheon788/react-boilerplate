@@ -94,4 +94,3 @@ npm start
 ```
 REACT_APP_SERVER_URL = ${your server url}
 ```
-
