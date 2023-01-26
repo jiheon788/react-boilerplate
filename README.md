@@ -37,3 +37,6 @@ npm start
 ```
 REACT_APP_SERVER_URL = ${your server url}
 ```
+
+## Ref
+- [https://github.com/gongdongho12/react-ainize-boilerplate](https://github.com/gongdongho12/react-ainize-boilerplate)
