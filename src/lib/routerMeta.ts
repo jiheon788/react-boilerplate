@@ -1,10 +1,18 @@
 export type RouterMetaType = {
-  [key: string]: string;
+  [key: string]: any;
 };
 
 const routerMeta: RouterMetaType = {
-  HomePage: '/',
-  AuthPage: '/auth',
+  HomePage: {
+    name: '홈',
+    path: '/',
+    isHide: 'false',
+  },
+  AuthPage: {
+    name: '로그인',
+    path: '/auth',
+    isHide: 'false',
+  },
 };
 
 export default routerMeta;

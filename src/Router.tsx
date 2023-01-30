@@ -1,12 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import routerMeta from 'lib/routerMeta';
-import { assignRouteProps } from 'utils/assignRouteProps';
+import routerMeta from '@/lib/routerMeta';
 
-const lazyImport = (containerName: string) => lazy(() => import(`pages/${containerName}`));
+const lazyImport = (pageName: string) => lazy(() => import(`@/pages/${pageName}`));
 
 const assignRouter = Object.keys(routerMeta).map((componentKey: string) => {
-  const props: any = assignRouteProps(routerMeta[componentKey]);
+  const props: any = routerMeta[componentKey];
 
   return {
     Component: lazyImport(componentKey),
@@ -14,23 +13,21 @@ const assignRouter = Object.keys(routerMeta).map((componentKey: string) => {
   };
 });
 
-const Router = () => {
-  return (
-    <Routes>
-      {assignRouter.map(({ Component, props }) => (
-        <Route
-          key={props.path}
-          path={props.path}
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Component />
-            </Suspense>
-          }
-          {...props}
-        />
-      ))}
-    </Routes>
-  );
-};
+const Router = () => (
+  <Routes>
+    {assignRouter.map(({ Component, props }) => (
+      <Route
+        key={props.path}
+        path={props.path}
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <Component />
+          </Suspense>
+        }
+        {...props}
+      />
+    ))}
+  </Routes>
+);
 
 export default Router;

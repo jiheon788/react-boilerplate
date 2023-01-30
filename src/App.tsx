@@ -1,7 +1,7 @@
 import React from 'react';
-import GlobalStyle from 'styles/GlobalStyle';
+import GlobalStyle from '@/styles/GlobalStyle';
 import Router from './Router';
-import NavBar from 'components/NavBar/index';
+import NavBar from '@/components/NavBar/index';
 
 function App() {
   return (
