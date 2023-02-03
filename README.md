@@ -1,20 +1,26 @@
 # React Boilerplate
-> This repository is a customized CRA + TypeScript repository that is easy for me to use.
+> Custom CRA + TypeScript template repository that is easy for me to use
 
 ## Features
 
 <dl>
   <dt>Path Alias</dt>
-  <dd>When importing modules from different paths, import them as alias(@).</dd>
+  <dd>When importing modules from different paths, import them as alias(@)</dd>
 
   <dt>Router + Nav Dynamic Assignment</dt>
-  <dd>Allocate the router dynamically in `lib/routerMeta`.</dd>
+  <dd>Allocate the router dynamically in `lib/routerMeta`</dd>
+  
+  <dt>Next generation JavaScript</dt>
+  <dd>Use template strings, object destructuring, arrow functions, JSX syntax and more</dd>
+  
+  <dt>Next generation CSS</dt>
+  <dd>Write composable CSS that's co-located with your components for complete modularity</dd>
 
   <dt>Theme</dt>
-  <dd>Use palette and breakpoints in `styles/theme`.</dd>
+  <dd>Use palette and breakpoints in `styles/theme`</dd>
 
   <dt>Custom Hooks</dt>
-  <dd>The custom hook that I use often.</dd>
+  <dd>The custom hook that I use often</dd>
 
   <dt>Eslint, Prettier</dt>
   <dd>Eslint, Pretier settings that I use often</dd>
