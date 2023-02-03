@@ -1,14 +1,27 @@
 # React Boilerplate
-> 2023-01-26
+> React + TypeScript Boilerplate
 
-- [x] typescript
-- [x] eslint, prettier
-- [x] craco
-- [x] styled-components
-- [x] axios
-- [x] react-router-dom
-- [x] React.lazy & Suspense
+## Features
 
+#### alias
+```javascript
+// before
+import NewComp from '../../components/NewComp'
+
+// after
+import NewComp from '@/components/NewComp'
+```
+
+#### 라우터 자동 할당
+
+- lib/routerMeta
+
+#### theme
+- styles/theme
+
+#### custom Hooks
+
+#### eslint, prettier
 
 ## Getting Started
 

@@ -1,17 +1,23 @@
+export interface IRouterMeta {
+  name: string;
+  path: string;
+  isShow: boolean;
+}
+
 export type RouterMetaType = {
-  [key: string]: any;
+  [key: string]: IRouterMeta;
 };
 
 const routerMeta: RouterMetaType = {
   HomePage: {
     name: '홈',
     path: '/',
-    isHide: 'false',
+    isShow: false,
   },
   AuthPage: {
     name: '로그인',
     path: '/auth',
-    isHide: 'false',
+    isShow: false,
   },
 };
 
