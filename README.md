@@ -3,7 +3,13 @@
 
 ## Features
 
-#### alias
+<dl>
+  <dt>Path Alias</dt>
+  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
+
+<dl>
+
+#### Alias
 ```javascript
 // before
 import NewComp from '../../components/NewComp'
@@ -12,16 +18,17 @@ import NewComp from '../../components/NewComp'
 import NewComp from '@/components/NewComp'
 ```
 
-#### 라우터 자동 할당
+#### Router + Nav Dynamic Assignment 
 
 - lib/routerMeta
 
 #### theme
+
 - styles/theme
 
-#### custom Hooks
+#### Custom Hooks
 
-#### eslint, prettier
+#### Eslint, Prettier
 
 ## Getting Started
 
