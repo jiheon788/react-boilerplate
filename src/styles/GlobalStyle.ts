@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
+
+  .App {
+    height: 100%;
+  }
 `;
 
 export default GlobalStyle;
