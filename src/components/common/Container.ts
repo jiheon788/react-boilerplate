@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { breakpoints } from '@/styles/theme';
 
-const ContainerDiv = styled.div<{ isSmall?: boolean }>`
+const Container = styled.div<{ isSmall?: boolean }>`
   /* small */
   width: 100%;
   padding-right: 15px;
@@ -30,4 +30,4 @@ const ContainerDiv = styled.div<{ isSmall?: boolean }>`
   }
 `;
 
-export default ContainerDiv;
+export default Container;
