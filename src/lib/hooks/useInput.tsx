@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-const useInput = (initialValue: any) => {
+type ReturnTypes = [
+  string | number,
+  (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void,
+];
+
+const useInput = (initialValue: string | number): ReturnTypes => {
   const [value, setValue] = useState(initialValue);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
