@@ -1,11 +1,16 @@
 import { useState } from 'react';
 
+type DefaultType = {
+  [key: string]: any;
+};
+
 type ReturnTypes = [
-  object,
+  any,
   (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void,
+  (value: any) => void,
 ];
 
-const useInputs = (initialValue: object): ReturnTypes => {
+const useInputs = (initialValue: DefaultType): ReturnTypes => {
   const [values, setValues] = useState(initialValue);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -15,7 +20,7 @@ const useInputs = (initialValue: object): ReturnTypes => {
     });
   };
 
-  return [values, onChange];
+  return [values, onChange, setValues];
 };
 
 export default useInputs;

@@ -1,11 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import routerMeta from '@/lib/routerMeta';
+import routerMeta, { IRouterMeta } from '@/lib/routerMeta';
 
 const lazyImport = (pageName: string) => lazy(() => import(`@/pages/${pageName}`));
 
-const assignRouter = Object.keys(routerMeta).map((componentKey: string) => {
-  const props: any = routerMeta[componentKey];
+const assignedRouter = Object.keys(routerMeta).map((componentKey: string) => {
+  const props: IRouterMeta = routerMeta[componentKey];
 
   return {
     Component: lazyImport(componentKey),
@@ -15,7 +15,7 @@ const assignRouter = Object.keys(routerMeta).map((componentKey: string) => {
 
 const Router = () => (
   <Routes>
-    {assignRouter.map(({ Component, props }) => (
+    {assignedRouter.map(({ Component, props }: any) => (
       <Route
         key={props.path}
         path={props.path}
@@ -24,7 +24,6 @@ const Router = () => (
             <Component />
           </Suspense>
         }
-        {...props}
       />
     ))}
   </Routes>
