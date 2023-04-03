@@ -1,6 +1,6 @@
+import axios, { AxiosResponse, InternalAxiosRequestConfig, AxiosError } from 'axios';
 import { ACCESS_TOKEN_KEY } from '@/constants/token.contant';
 import token from '@/lib/token';
-import axios, { AxiosResponse, InternalAxiosRequestConfig, AxiosError } from 'axios';
 
 const host = process.env.REACT_APP_SERVER_URL;
 

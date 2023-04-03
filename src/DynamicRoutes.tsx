@@ -1,24 +1,27 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import routerMeta, { IRouterMeta } from '@/lib/routerMeta';
+import routerMeta from '@/lib/routerMeta';
 
 const lazyImport = (pageName: string) => lazy(() => import(`@/pages/${pageName}`));
 
-const assignedRouter = Object.keys(routerMeta).map((componentKey: string) => {
-  const props: IRouterMeta = routerMeta[componentKey];
-
+const pages = Object.keys(routerMeta).map((componentKey: string) => {
   return {
     Component: lazyImport(componentKey),
-    props,
+    path: routerMeta[componentKey].path,
   };
 });
 
-const Router = () => (
+interface IDynamicRoutes {
+  Component: React.LazyExoticComponent<React.ComponentType<any>>;
+  path: string;
+}
+
+const DynamicRoutes = () => (
   <Routes>
-    {assignedRouter.map(({ Component, props }: any) => (
+    {pages.map(({ Component, path }: IDynamicRoutes) => (
       <Route
-        key={props.path}
-        path={props.path}
+        key={path}
+        path={path}
         element={
           <Suspense fallback={<div>Loading...</div>}>
             <Component />
@@ -29,4 +32,4 @@ const Router = () => (
   </Routes>
 );
 
-export default Router;
+export default DynamicRoutes;

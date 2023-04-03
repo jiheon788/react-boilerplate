@@ -1,12 +1,13 @@
 import React from 'react';
-import Router from './Router';
+import { BrowserRouter } from 'react-router-dom';
+import DynamicRoutes from './DynamicRoutes';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Router />
-    </div>
+    <BrowserRouter>
+      <DynamicRoutes />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
