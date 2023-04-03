@@ -2,7 +2,20 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import routerMeta from '@/lib/routerMeta';
 
-const lazyImport = (pageName: string) => lazy(() => import(`@/pages/${pageName}`));
+const lazyImport = (pageName: string) =>
+  lazy(() =>
+    import(`@/pages/${pageName}`).catch((err) => {
+      if (/not find module/.test(err.message)) {
+        return import('@/pages/NotFoundPage');
+      }
+      if (/Loading chunk \d+ failed/.test(err.message)) {
+        window.location.reload();
+        return;
+      }
+
+      throw err;
+    }),
+  );
 
 const pages = Object.keys(routerMeta).map((componentKey: string) => {
   return {
